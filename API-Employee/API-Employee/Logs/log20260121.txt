@@ -1,0 +1,883 @@
+2026-01-21 15:12:00.097 +07:00  DBG  Registered model binder providers, in the following order: ["Asp.Versioning.ApiVersionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-01-21 15:12:01.007 +07:00  DBG  An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-01-21 15:12:01.091 +07:00  INF  User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-21 15:12:01.571 +07:00  DBG  The index {'EmployeeId'} was not created on entity type 'EmployeeAttendance' as the properties are already covered by the index {'EmployeeId', 'WorkDate'}.
+2026-01-21 15:12:01.573 +07:00  DBG  The index {'UserId'} was not created on entity type 'AppUserRole' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-01-21 15:12:01.574 +07:00  DBG  The index {'UserId'} was not created on entity type 'IdentityUserToken<Guid>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-01-21 15:12:01.767 +07:00  DBG  Entity Framework Core 9.0.1 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.1' with options: MigrationsAssembly=Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null EngineType=SqlServer 
+2026-01-21 15:12:01.978 +07:00  DBG  Compiling query expression: 
+'DbSet<AppRole>()
+    .Any()'
+2026-01-21 15:12:02.166 +07:00  DBG  Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<bool>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetRoles AS a)) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetRoles AS a), 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        bool? value1;
+        value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+        return (bool)value1;
+    }, 
+    contextType: Infrastructure.Persistence.DatabaseContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)
+    .Single()'
+2026-01-21 15:12:02.203 +07:00  DBG  Creating DbConnection.
+2026-01-21 15:12:02.221 +07:00  DBG  Created DbConnection. (17ms).
+2026-01-21 15:12:02.225 +07:00  DBG  Opening connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:02.837 +07:00  DBG  Opened connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:02.842 +07:00  DBG  Creating DbCommand for 'ExecuteReader'.
+2026-01-21 15:12:02.848 +07:00  DBG  Created DbCommand for 'ExecuteReader' (4ms).
+2026-01-21 15:12:02.852 +07:00  DBG  Initialized DbCommand for 'ExecuteReader' (10ms).
+2026-01-21 15:12:02.858 +07:00  DBG  Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-01-21 15:12:02.893 +07:00  INF  Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-01-21 15:12:02.905 +07:00  DBG  Closing data reader to 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:02.912 +07:00  DBG  A data reader for 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' is being disposed after spending 11ms reading results.
+2026-01-21 15:12:02.916 +07:00  DBG  Closing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:02.922 +07:00  DBG  Closed connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' (5ms).
+2026-01-21 15:12:02.924 +07:00  DBG  'DatabaseContext' disposed.
+2026-01-21 15:12:02.927 +07:00  DBG  Disposing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:02.929 +07:00  DBG  Disposed connection to database '' on server '' (1ms).
+2026-01-21 15:12:02.933 +07:00  DBG  Hosting starting
+2026-01-21 15:12:02.942 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-3a3f5ba7-96ca-43ee-aa50-0baf947a8e30.xml'.
+2026-01-21 15:12:02.964 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-8600f587-dc07-4d5b-bb2d-6f3e09633935.xml'.
+2026-01-21 15:12:02.984 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-8ded6968-7296-406f-847b-09157786742c.xml'.
+2026-01-21 15:12:03.004 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-bcbbd09c-5d11-4ea7-a210-5a7b4541efa2.xml'.
+2026-01-21 15:12:03.024 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-bf802ebd-f5d7-4dd0-a35d-d8f5ffbc0bc1.xml'.
+2026-01-21 15:12:03.045 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-e60ff1e8-9769-4c99-9c41-530a7dbb1337.xml'.
+2026-01-21 15:12:03.064 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-f5e67d02-4c24-4201-b8e7-897e61f0ba09.xml'.
+2026-01-21 15:12:03.088 +07:00  DBG  Found key {3a3f5ba7-96ca-43ee-aa50-0baf947a8e30}.
+2026-01-21 15:12:03.096 +07:00  DBG  Found key {8600f587-dc07-4d5b-bb2d-6f3e09633935}.
+2026-01-21 15:12:03.097 +07:00  DBG  Found key {8ded6968-7296-406f-847b-09157786742c}.
+2026-01-21 15:12:03.099 +07:00  DBG  Found key {bcbbd09c-5d11-4ea7-a210-5a7b4541efa2}.
+2026-01-21 15:12:03.100 +07:00  DBG  Found key {bf802ebd-f5d7-4dd0-a35d-d8f5ffbc0bc1}.
+2026-01-21 15:12:03.102 +07:00  DBG  Found key {e60ff1e8-9769-4c99-9c41-530a7dbb1337}.
+2026-01-21 15:12:03.103 +07:00  DBG  Found key {f5e67d02-4c24-4201-b8e7-897e61f0ba09}.
+2026-01-21 15:12:03.109 +07:00  DBG  Considering key {8ded6968-7296-406f-847b-09157786742c} with expiration date 2026-04-16 02:40:32Z as default key.
+2026-01-21 15:12:03.114 +07:00  DBG  Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-01-21 15:12:03.119 +07:00  DBG  Decrypting secret element using Windows DPAPI.
+2026-01-21 15:12:03.121 +07:00  DBG  Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-01-21 15:12:03.126 +07:00  DBG  Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-01-21 15:12:03.131 +07:00  DBG  Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-01-21 15:12:03.137 +07:00  DBG  Using key {8ded6968-7296-406f-847b-09157786742c} as the default key.
+2026-01-21 15:12:03.139 +07:00  DBG  Key ring with default key {8ded6968-7296-406f-847b-09157786742c} was loaded during application startup.
+2026-01-21 15:12:03.145 +07:00  DBG  Middleware loaded
+2026-01-21 15:12:03.148 +07:00  DBG  Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16509 B).
+2026-01-21 15:12:03.151 +07:00  DBG  Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-01-21 15:12:03.191 +07:00  WRN  The WebRootPath was not found: D:\C# .Net Core\Project\Employee\API-Employee\API-Employee\wwwroot. Static files may be unavailable.
+2026-01-21 15:12:03.223 +07:00  DBG  Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-01-21 15:12:03.266 +07:00  INF  Now listening on: http://[::]:5501
+2026-01-21 15:12:03.269 +07:00  DBG  Loaded hosting startup assembly API-Employee
+2026-01-21 15:12:03.270 +07:00  DBG  Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-01-21 15:12:03.271 +07:00  DBG  Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-01-21 15:12:03.272 +07:00  DBG  Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-01-21 15:12:03.330 +07:00  DBG  Connection id "0HNIOOJ183AC1" accepted.
+2026-01-21 15:12:03.332 +07:00  DBG  Connection id "0HNIOOJ183AC1" started.
+2026-01-21 15:12:03.337 +07:00  DBG  Connection id "0HNIOOJ183AC2" accepted.
+2026-01-21 15:12:03.339 +07:00  DBG  Connection id "0HNIOOJ183AC2" started.
+2026-01-21 15:12:03.372 +07:00  DBG  Connection id "0HNIOOJ183AC1" received FIN.
+2026-01-21 15:12:03.372 +07:00  DBG  Connection id "0HNIOOJ183AC2" received FIN.
+2026-01-21 15:12:03.381 +07:00  DBG  Connection id "0HNIOOJ183AC2" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-01-21 15:12:03.381 +07:00  DBG  Connection id "0HNIOOJ183AC1" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-01-21 15:12:03.390 +07:00  DBG  Connection id "0HNIOOJ183AC2" disconnecting.
+2026-01-21 15:12:03.391 +07:00  DBG  Connection id "0HNIOOJ183AC1" disconnecting.
+2026-01-21 15:12:03.402 +07:00  DBG  Connection id "0HNIOOJ183AC2" stopped.
+2026-01-21 15:12:03.402 +07:00  DBG  Connection id "0HNIOOJ183AC1" stopped.
+2026-01-21 15:12:03.404 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2026-01-21 15:12:03.406 +07:00  INF  Hosting environment: Development
+2026-01-21 15:12:03.407 +07:00  INF  Content root path: D:\C# .Net Core\Project\Employee\API-Employee\API-Employee
+2026-01-21 15:12:03.409 +07:00  DBG  Hosting started
+2026-01-21 15:12:03.670 +07:00  DBG  Connection id "0HNIOOJ183AC3" accepted.
+2026-01-21 15:12:03.671 +07:00  DBG  Connection id "0HNIOOJ183AC3" started.
+2026-01-21 15:12:03.677 +07:00  DBG  Connection id "0HNIOOJ183AC4" accepted.
+2026-01-21 15:12:03.679 +07:00  DBG  Connection id "0HNIOOJ183AC4" started.
+2026-01-21 15:12:03.709 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/swagger - null null
+2026-01-21 15:12:03.822 +07:00  DBG  Wildcard detected, all requests with hosts will be allowed.
+2026-01-21 15:12:03.856 +07:00 c734a0be-0206-4bef-bce1-7c8f33b0f75a DBG  No candidates found for the request path '/swagger'
+2026-01-21 15:12:03.860 +07:00 c734a0be-0206-4bef-bce1-7c8f33b0f75a DBG  Request did not match any endpoints
+2026-01-21 15:12:03.863 +07:00 c734a0be-0206-4bef-bce1-7c8f33b0f75a WRN  Failed to determine the https port for redirect.
+2026-01-21 15:12:04.910 +07:00 c734a0be-0206-4bef-bce1-7c8f33b0f75a DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:12:04.920 +07:00 c734a0be-0206-4bef-bce1-7c8f33b0f75a DBG  The request path /swagger does not match a supported file type
+2026-01-21 15:12:04.928 +07:00  DBG  Connection id "0HNIOOJ183AC3" completed keep alive response.
+2026-01-21 15:12:04.931 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/swagger - 301 0 null 1231.1753ms
+2026-01-21 15:12:04.936 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/swagger/index.html - null null
+2026-01-21 15:12:04.941 +07:00 b7f7cf0f-4b59-4476-81b6-ec792ef44402 DBG  No candidates found for the request path '/swagger/index.html'
+2026-01-21 15:12:04.942 +07:00 b7f7cf0f-4b59-4476-81b6-ec792ef44402 DBG  Request did not match any endpoints
+2026-01-21 15:12:04.944 +07:00 b7f7cf0f-4b59-4476-81b6-ec792ef44402 DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:12:04.948 +07:00 b7f7cf0f-4b59-4476-81b6-ec792ef44402 DBG  The request path /swagger/index.html does not match an existing file
+2026-01-21 15:12:04.994 +07:00 b7f7cf0f-4b59-4476-81b6-ec792ef44402 DBG  Response markup is scheduled to include Browser Link script injection.
+2026-01-21 15:12:04.996 +07:00 b7f7cf0f-4b59-4476-81b6-ec792ef44402 DBG  Response markup is scheduled to include browser refresh script injection.
+2026-01-21 15:12:05.009 +07:00  DBG  Response markup was updated to include Browser Link script injection.
+2026-01-21 15:12:05.010 +07:00  DBG  Response markup was updated to include browser refresh script injection.
+2026-01-21 15:12:05.012 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/swagger/swagger-ui.css - null null
+2026-01-21 15:12:05.012 +07:00  DBG  Connection id "0HNIOOJ183AC5" accepted.
+2026-01-21 15:12:05.012 +07:00  DBG  Connection id "0HNIOOJ183AC3" completed keep alive response.
+2026-01-21 15:12:05.017 +07:00  DBG  Connection id "0HNIOOJ183AC5" started.
+2026-01-21 15:12:05.015 +07:00 5b217512-6048-4c04-a371-414655d36f62 DBG  No candidates found for the request path '/swagger/swagger-ui.css'
+2026-01-21 15:12:05.017 +07:00  DBG  Connection id "0HNIOOJ183AC6" accepted.
+2026-01-21 15:12:05.018 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/swagger/index.html - 200 null text/html;charset=utf-8 82.5134ms
+2026-01-21 15:12:05.022 +07:00  DBG  Connection id "0HNIOOJ183AC6" started.
+2026-01-21 15:12:05.019 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/swagger/swagger-ui-bundle.js - null null
+2026-01-21 15:12:05.021 +07:00 5b217512-6048-4c04-a371-414655d36f62 DBG  Request did not match any endpoints
+2026-01-21 15:12:05.022 +07:00  DBG  Connection id "0HNIOOJ183AC7" accepted.
+2026-01-21 15:12:05.027 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/_vs/browserLink - null null
+2026-01-21 15:12:05.033 +07:00  DBG  Connection id "0HNIOOJ183AC7" started.
+2026-01-21 15:12:05.028 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/swagger/swagger-ui-standalone-preset.js - null null
+2026-01-21 15:12:05.036 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-21 15:12:05.039 +07:00 d61c18f8-3f64-47fd-af6a-67a545894f39 DBG  No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2026-01-21 15:12:05.030 +07:00 46d0dacc-a71e-4118-88a8-905b26a1ddb8 DBG  No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2026-01-21 15:12:05.033 +07:00 5b217512-6048-4c04-a371-414655d36f62 DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:12:05.050 +07:00 d61c18f8-3f64-47fd-af6a-67a545894f39 DBG  Request did not match any endpoints
+2026-01-21 15:12:05.050 +07:00  DBG  Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-01-21 15:12:05.057 +07:00 d61c18f8-3f64-47fd-af6a-67a545894f39 DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:12:05.058 +07:00  DBG  Connection id "0HNIOOJ183AC7" completed keep alive response.
+2026-01-21 15:12:05.053 +07:00 46d0dacc-a71e-4118-88a8-905b26a1ddb8 DBG  Request did not match any endpoints
+2026-01-21 15:12:05.061 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 25.079ms
+2026-01-21 15:12:05.060 +07:00 d61c18f8-3f64-47fd-af6a-67a545894f39 DBG  The request path /swagger/swagger-ui-standalone-preset.js does not match an existing file
+2026-01-21 15:12:05.063 +07:00 46d0dacc-a71e-4118-88a8-905b26a1ddb8 DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:12:05.055 +07:00 5b217512-6048-4c04-a371-414655d36f62 DBG  The request path /swagger/swagger-ui.css does not match an existing file
+2026-01-21 15:12:05.070 +07:00 46d0dacc-a71e-4118-88a8-905b26a1ddb8 DBG  The request path /swagger/swagger-ui-bundle.js does not match an existing file
+2026-01-21 15:12:05.079 +07:00  DBG  Connection id "0HNIOOJ183AC3" completed keep alive response.
+2026-01-21 15:12:05.080 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.2772ms
+2026-01-21 15:12:05.099 +07:00 5b217512-6048-4c04-a371-414655d36f62 INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-01-21 15:12:05.099 +07:00 d61c18f8-3f64-47fd-af6a-67a545894f39 INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-01-21 15:12:05.108 +07:00  DBG  Connection id "0HNIOOJ183AC4" completed keep alive response.
+2026-01-21 15:12:05.108 +07:00  DBG  Connection id "0HNIOOJ183AC6" completed keep alive response.
+2026-01-21 15:12:05.110 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/swagger/swagger-ui.css - 200 152034 text/css 97.9472ms
+2026-01-21 15:12:05.111 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 83.1533ms
+2026-01-21 15:12:05.126 +07:00 46d0dacc-a71e-4118-88a8-905b26a1ddb8 INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-01-21 15:12:05.127 +07:00  DBG  Connection id "0HNIOOJ183AC5" completed keep alive response.
+2026-01-21 15:12:05.129 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 109.1692ms
+2026-01-21 15:12:05.265 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/swagger/v1/swagger.json - null null
+2026-01-21 15:12:05.268 +07:00 9eae9657-bc36-4b5e-9eeb-00ffbace68dd DBG  No candidates found for the request path '/swagger/v1/swagger.json'
+2026-01-21 15:12:05.269 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/swagger/favicon-32x32.png - null null
+2026-01-21 15:12:05.270 +07:00 9eae9657-bc36-4b5e-9eeb-00ffbace68dd DBG  Request did not match any endpoints
+2026-01-21 15:12:05.273 +07:00 90dc0819-c112-4c8c-97ba-8cfb856cd63a DBG  No candidates found for the request path '/swagger/favicon-32x32.png'
+2026-01-21 15:12:05.274 +07:00 9eae9657-bc36-4b5e-9eeb-00ffbace68dd DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:12:05.275 +07:00 90dc0819-c112-4c8c-97ba-8cfb856cd63a DBG  Request did not match any endpoints
+2026-01-21 15:12:05.277 +07:00 9eae9657-bc36-4b5e-9eeb-00ffbace68dd DBG  The request path /swagger/v1/swagger.json does not match an existing file
+2026-01-21 15:12:05.280 +07:00 90dc0819-c112-4c8c-97ba-8cfb856cd63a DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:12:05.282 +07:00 90dc0819-c112-4c8c-97ba-8cfb856cd63a DBG  The request path /swagger/favicon-32x32.png does not match an existing file
+2026-01-21 15:12:05.284 +07:00 90dc0819-c112-4c8c-97ba-8cfb856cd63a INF  Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-01-21 15:12:05.285 +07:00  DBG  Connection id "0HNIOOJ183AC6" completed keep alive response.
+2026-01-21 15:12:05.287 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/swagger/favicon-32x32.png - 200 628 image/png 17.8077ms
+2026-01-21 15:12:05.338 +07:00  DBG  Connection id "0HNIOOJ183AC5" completed keep alive response.
+2026-01-21 15:12:05.339 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.7075ms
+2026-01-21 15:12:13.175 +07:00  INF  Request starting HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - application/json 50
+2026-01-21 15:12:13.192 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  1 candidate(s) found for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:12:13.194 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)' with route pattern 'api/v{v:apiVersion}/Auth/sign-in' is valid for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:12:13.199 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Request matched endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:12:13.202 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  The request has an origin header: 'http://localhost:5501'.
+2026-01-21 15:12:13.202 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 INF  CORS policy execution successful.
+2026-01-21 15:12:13.205 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:12:13.208 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:12:13.209 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:12:13.210 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 INF  Executing endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:12:13.229 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 INF  Route matched with {action = "SignIn", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(Application.CQRS.Commands.Auth.SignIn.SignInCommand) on controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee).
+2026-01-21 15:12:13.234 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Execution plan of authorization filters (in the following order): ["None"]
+2026-01-21 15:12:13.235 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Execution plan of resource filters (in the following order): ["None"]
+2026-01-21 15:12:13.237 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:12:13.241 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Execution plan of exception filters (in the following order): ["None"]
+2026-01-21 15:12:13.242 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:12:13.245 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Executing controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:12:13.249 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 WRN  You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-21 15:12:13.251 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Executed controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:12:13.257 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:12:13.261 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' using the name '' in request data ...
+2026-01-21 15:12:13.264 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-01-21 15:12:13.284 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Connection id "0HNIOOJ183AC5", Request id "0HNIOOJ183AC5:00000003": started reading request body.
+2026-01-21 15:12:13.286 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Connection id "0HNIOOJ183AC5", Request id "0HNIOOJ183AC5:00000003": done reading request body.
+2026-01-21 15:12:13.298 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  JSON input formatter succeeded, deserializing to type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'
+2026-01-21 15:12:13.301 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:12:13.303 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:12:13.304 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:12:13.308 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Done attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:12:30.643 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 INF  CQRS Handling SignInCommand | Payload: {"Username":"string","Password":"string","$type":"SignInCommand"}
+2026-01-21 15:12:30.693 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Entity Framework Core 9.0.1 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.1' with options: MigrationsAssembly=Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null EngineType=SqlServer 
+2026-01-21 15:12:30.704 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Compiling query expression: 
+'DbSet<AppUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2026-01-21 15:12:30.760 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<AppUser>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 2], [Property: AppUser.CreatedAt (DateTime?), 3], [Property: AppUser.DateBirth (DateTime?), 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string), 7], [Property: AppUser.LastName (string), 8], [Property: AppUser.LockoutEnabled (bool) Required, 9], [Property: AppUser.LockoutEnd (DateTimeOffset?), 10], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: AppUser.PasswordHash (string), 13], [Property: AppUser.PhoneNumber (string), 14], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 15], [Property: AppUser.SecurityStamp (string), 16], [Property: AppUser.TwoFactorEnabled (bool) Required, 17], [Property: AppUser.UpdatedAt (DateTime?), 18], [Property: AppUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DateBirth, a.Email, a.EmailConfirmed, a.FirstName, a.LastName, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 2], [Property: AppUser.CreatedAt (DateTime?), 3], [Property: AppUser.DateBirth (DateTime?), 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string), 7], [Property: AppUser.LastName (string), 8], [Property: AppUser.LockoutEnabled (bool) Required, 9], [Property: AppUser.LockoutEnd (DateTimeOffset?), 10], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: AppUser.PasswordHash (string), 13], [Property: AppUser.PhoneNumber (string), 14], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 15], [Property: AppUser.SecurityStamp (string), 16], [Property: AppUser.TwoFactorEnabled (bool) Required, 17], [Property: AppUser.UpdatedAt (DateTime?), 18], [Property: AppUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DateBirth, a.Email, a.EmailConfirmed, a.FirstName, a.LastName, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            AppUser entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                AppUser instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(AppUser);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: AppUser.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("Domain.Identity.AppUser").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetGuid(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (AppUser)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Domain.Identity.AppUser")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Domain.Identity.AppUser")]: 
+                            {
+                                return 
+                                {
+                                    AppUser instance;
+                                    instance = new AppUser();
+                                    instance.<Id>k__BackingField = dataReader.GetGuid(0);
+                                    instance.<AccessFailedCount>k__BackingField = dataReader.GetInt32(1);
+                                    instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(2) ? default(string) : dataReader.GetString(2);
+                                    instance.<CreatedAt>k__BackingField = dataReader.IsDBNull(3) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(3);
+                                    instance.<DateBirth>k__BackingField = dataReader.IsDBNull(4) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(4);
+                                    instance.<Email>k__BackingField = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+                                    instance.<EmailConfirmed>k__BackingField = dataReader.GetBoolean(6);
+                                    instance.<FirstName>k__BackingField = dataReader.IsDBNull(7) ? default(string) : dataReader.GetString(7);
+                                    instance.<LastName>k__BackingField = dataReader.IsDBNull(8) ? default(string) : dataReader.GetString(8);
+                                    instance.<LockoutEnabled>k__BackingField = dataReader.GetBoolean(9);
+                                    instance.<LockoutEnd>k__BackingField = dataReader.IsDBNull(10) ? default(DateTimeOffset?) : (DateTimeOffset?)dataReader.GetFieldValue<DateTimeOffset>(10);
+                                    instance.<NormalizedEmail>k__BackingField = dataReader.IsDBNull(11) ? default(string) : dataReader.GetString(11);
+                                    instance.<NormalizedUserName>k__BackingField = dataReader.IsDBNull(12) ? default(string) : dataReader.GetString(12);
+                                    instance.<PasswordHash>k__BackingField = dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13);
+                                    instance.<PhoneNumber>k__BackingField = dataReader.IsDBNull(14) ? default(string) : dataReader.GetString(14);
+                                    instance.<PhoneNumberConfirmed>k__BackingField = dataReader.GetBoolean(15);
+                                    instance.<SecurityStamp>k__BackingField = dataReader.IsDBNull(16) ? default(string) : dataReader.GetString(16);
+                                    instance.<TwoFactorEnabled>k__BackingField = dataReader.GetBoolean(17);
+                                    instance.<UpdatedAt>k__BackingField = dataReader.IsDBNull(18) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(18);
+                                    instance.<UserName>k__BackingField = dataReader.IsDBNull(19) ? default(string) : dataReader.GetString(19);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Domain.Identity.AppUser")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(AppUser)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: Infrastructure.Persistence.DatabaseContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-01-21 15:12:30.799 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Creating DbConnection.
+2026-01-21 15:12:30.800 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Created DbConnection. (1ms).
+2026-01-21 15:12:30.803 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Opening connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:30.806 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Opened connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:30.807 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Creating DbCommand for 'ExecuteReader'.
+2026-01-21 15:12:30.809 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Created DbCommand for 'ExecuteReader' (1ms).
+2026-01-21 15:12:30.813 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Initialized DbCommand for 'ExecuteReader' (5ms).
+2026-01-21 15:12:30.816 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:12:31.098 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 INF  Executed DbCommand (283ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:12:31.110 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Closing data reader to 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:31.112 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  A data reader for 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' is being disposed after spending 8ms reading results.
+2026-01-21 15:12:31.116 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Closing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:31.118 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 DBG  Closed connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' (2ms).
+2026-01-21 15:12:34.236 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 ERR  CQRS Error in SignInCommand after 3593ms
+Application.Exceptions.UnauthorizedException: Invalid credentials
+   at Application.CQRS.Commands.Auth.SignIn.SignInHandler.Handle(SignInCommand request, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\CQRS\Commands\Auth\SignIn\SignInHandler.cs:line 34
+   at Application.Behavior.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\Behavior\LoggingBehavior.cs:line 34
+2026-01-21 15:12:34.368 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 INF  Executed action API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee) in 21122.2526ms
+2026-01-21 15:12:34.372 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 INF  Executed endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:12:34.437 +07:00 aaab50b4-5809-4d78-bd81-b891be199076 WRN  Handled exception at /api/v1/Auth/sign-in StatusCode 401 Message Invalid credentials
+2026-01-21 15:12:34.445 +07:00  DBG  Connection id "0HNIOOJ183AC5" completed keep alive response.
+2026-01-21 15:12:34.448 +07:00  DBG  'DatabaseContext' disposed.
+2026-01-21 15:12:34.450 +07:00  DBG  Disposing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:12:34.452 +07:00  DBG  Disposed connection to database '' on server '' (1ms).
+2026-01-21 15:12:34.453 +07:00  INF  Request finished HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - 401 null application/json 21278.1893ms
+2026-01-21 15:13:08.223 +07:00  INF  Request starting HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - application/json 50
+2026-01-21 15:13:08.227 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  1 candidate(s) found for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:13:08.229 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)' with route pattern 'api/v{v:apiVersion}/Auth/sign-in' is valid for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:13:08.231 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Request matched endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:13:08.233 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  The request has an origin header: 'http://localhost:5501'.
+2026-01-21 15:13:08.234 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b INF  CORS policy execution successful.
+2026-01-21 15:13:08.235 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:13:08.236 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:13:08.237 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:13:08.238 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b INF  Executing endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:13:08.239 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b INF  Route matched with {action = "SignIn", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(Application.CQRS.Commands.Auth.SignIn.SignInCommand) on controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee).
+2026-01-21 15:13:08.243 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Execution plan of authorization filters (in the following order): ["None"]
+2026-01-21 15:13:08.245 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Execution plan of resource filters (in the following order): ["None"]
+2026-01-21 15:13:08.246 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:13:08.249 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Execution plan of exception filters (in the following order): ["None"]
+2026-01-21 15:13:08.250 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:13:08.252 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Executing controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:13:08.254 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Executed controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:13:08.257 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:13:08.259 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' using the name '' in request data ...
+2026-01-21 15:13:08.261 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-01-21 15:13:08.262 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Connection id "0HNIOOJ183AC5", Request id "0HNIOOJ183AC5:00000004": started reading request body.
+2026-01-21 15:13:08.263 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Connection id "0HNIOOJ183AC5", Request id "0HNIOOJ183AC5:00000004": done reading request body.
+2026-01-21 15:13:08.265 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  JSON input formatter succeeded, deserializing to type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'
+2026-01-21 15:13:08.267 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:13:08.268 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:13:08.270 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:13:08.274 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Done attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:13:11.813 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b INF  CQRS Handling SignInCommand | Payload: {"Username":"string","Password":"string","$type":"SignInCommand"}
+2026-01-21 15:13:11.825 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Entity Framework Core 9.0.1 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.1' with options: MigrationsAssembly=Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null EngineType=SqlServer 
+2026-01-21 15:13:11.832 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Creating DbConnection.
+2026-01-21 15:13:11.833 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Created DbConnection. (1ms).
+2026-01-21 15:13:11.835 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Opening connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:11.836 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Opened connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:11.838 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Creating DbCommand for 'ExecuteReader'.
+2026-01-21 15:13:11.839 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Created DbCommand for 'ExecuteReader' (1ms).
+2026-01-21 15:13:11.841 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Initialized DbCommand for 'ExecuteReader' (3ms).
+2026-01-21 15:13:11.843 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:13:11.861 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b INF  Executed DbCommand (18ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:13:11.866 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Closing data reader to 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:11.867 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  A data reader for 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2026-01-21 15:13:11.868 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Closing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:11.869 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b DBG  Closed connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' (1ms).
+2026-01-21 15:13:13.493 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b ERR  CQRS Error in SignInCommand after 1681ms
+Application.Exceptions.UnauthorizedException: Invalid credentials
+   at Application.CQRS.Commands.Auth.SignIn.SignInHandler.Handle(SignInCommand request, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\CQRS\Commands\Auth\SignIn\SignInHandler.cs:line 34
+   at Application.Behavior.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\Behavior\LoggingBehavior.cs:line 34
+2026-01-21 15:13:13.601 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b INF  Executed action API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee) in 5348.873ms
+2026-01-21 15:13:13.603 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b INF  Executed endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:13:13.655 +07:00 d94c9774-250d-4302-a4ec-d08f3237863b WRN  Handled exception at /api/v1/Auth/sign-in StatusCode 401 Message Invalid credentials
+2026-01-21 15:13:13.659 +07:00  DBG  Connection id "0HNIOOJ183AC5" completed keep alive response.
+2026-01-21 15:13:13.660 +07:00  DBG  'DatabaseContext' disposed.
+2026-01-21 15:13:13.661 +07:00  DBG  Disposing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:13.663 +07:00  DBG  Disposed connection to database '' on server '' (1ms).
+2026-01-21 15:13:13.664 +07:00  INF  Request finished HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - 401 null application/json 5443.5372ms
+2026-01-21 15:13:15.740 +07:00  INF  Request starting HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - application/json 50
+2026-01-21 15:13:27.860 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  1 candidate(s) found for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:13:27.862 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)' with route pattern 'api/v{v:apiVersion}/Auth/sign-in' is valid for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:13:27.869 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Request matched endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:13:27.870 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  The request has an origin header: 'http://localhost:5501'.
+2026-01-21 15:13:27.871 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e INF  CORS policy execution successful.
+2026-01-21 15:13:27.872 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:13:27.873 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:13:27.874 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:13:27.875 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e INF  Executing endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:13:27.876 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e INF  Route matched with {action = "SignIn", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(Application.CQRS.Commands.Auth.SignIn.SignInCommand) on controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee).
+2026-01-21 15:13:27.878 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Execution plan of authorization filters (in the following order): ["None"]
+2026-01-21 15:13:27.879 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Execution plan of resource filters (in the following order): ["None"]
+2026-01-21 15:13:27.883 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:13:27.886 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Execution plan of exception filters (in the following order): ["None"]
+2026-01-21 15:13:27.887 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:13:27.889 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Executing controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:13:27.891 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Executed controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:13:27.892 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:13:27.893 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' using the name '' in request data ...
+2026-01-21 15:13:27.895 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-01-21 15:13:27.900 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Connection id "0HNIOOJ183AC5", Request id "0HNIOOJ183AC5:00000005": started reading request body.
+2026-01-21 15:13:27.901 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Connection id "0HNIOOJ183AC5", Request id "0HNIOOJ183AC5:00000005": done reading request body.
+2026-01-21 15:13:27.902 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  JSON input formatter succeeded, deserializing to type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'
+2026-01-21 15:13:27.903 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:13:27.905 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:13:27.906 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:13:27.908 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Done attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:13:28.113 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e INF  CQRS Handling SignInCommand | Payload: {"Username":"string","Password":"string","$type":"SignInCommand"}
+2026-01-21 15:13:28.122 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Entity Framework Core 9.0.1 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.1' with options: MigrationsAssembly=Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null EngineType=SqlServer 
+2026-01-21 15:13:28.126 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Creating DbConnection.
+2026-01-21 15:13:28.127 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Created DbConnection. (0ms).
+2026-01-21 15:13:28.130 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Opening connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:28.132 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Opened connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:28.133 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Creating DbCommand for 'ExecuteReader'.
+2026-01-21 15:13:28.134 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Created DbCommand for 'ExecuteReader' (1ms).
+2026-01-21 15:13:28.135 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Initialized DbCommand for 'ExecuteReader' (2ms).
+2026-01-21 15:13:28.137 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:13:28.141 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e INF  Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:13:28.157 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Closing data reader to 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:28.158 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  A data reader for 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2026-01-21 15:13:28.161 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Closing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:28.163 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e DBG  Closed connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' (1ms).
+2026-01-21 15:13:31.027 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e ERR  CQRS Error in SignInCommand after 2913ms
+Application.Exceptions.UnauthorizedException: Invalid credentials
+   at Application.CQRS.Commands.Auth.SignIn.SignInHandler.Handle(SignInCommand request, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\CQRS\Commands\Auth\SignIn\SignInHandler.cs:line 34
+   at Application.Behavior.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\Behavior\LoggingBehavior.cs:line 34
+2026-01-21 15:13:31.137 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e INF  Executed action API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee) in 3247.9588ms
+2026-01-21 15:13:31.138 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e INF  Executed endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:13:31.189 +07:00 756d4f1d-9824-4423-8966-fe0c2320860e WRN  Handled exception at /api/v1/Auth/sign-in StatusCode 401 Message Invalid credentials
+2026-01-21 15:13:31.191 +07:00  DBG  Connection id "0HNIOOJ183AC5" completed keep alive response.
+2026-01-21 15:13:31.193 +07:00  DBG  'DatabaseContext' disposed.
+2026-01-21 15:13:31.194 +07:00  DBG  Disposing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:13:31.196 +07:00  DBG  Disposed connection to database '' on server '' (1ms).
+2026-01-21 15:13:31.198 +07:00  INF  Request finished HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - 401 null application/json 15458.0535ms
+2026-01-21 15:13:33.099 +07:00  INF  Request starting HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - application/json 50
+2026-01-21 15:13:33.102 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  1 candidate(s) found for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:13:33.104 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)' with route pattern 'api/v{v:apiVersion}/Auth/sign-in' is valid for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:13:33.107 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Request matched endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:13:33.108 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  The request has an origin header: 'http://localhost:5501'.
+2026-01-21 15:13:33.109 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 INF  CORS policy execution successful.
+2026-01-21 15:13:33.110 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:13:33.111 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:13:33.112 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:13:33.114 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 INF  Executing endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:13:33.115 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 INF  Route matched with {action = "SignIn", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(Application.CQRS.Commands.Auth.SignIn.SignInCommand) on controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee).
+2026-01-21 15:13:33.117 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Execution plan of authorization filters (in the following order): ["None"]
+2026-01-21 15:13:33.118 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Execution plan of resource filters (in the following order): ["None"]
+2026-01-21 15:13:33.120 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:13:33.126 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Execution plan of exception filters (in the following order): ["None"]
+2026-01-21 15:13:33.128 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:13:33.130 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Executing controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:13:33.132 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Executed controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:13:33.134 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:13:33.135 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' using the name '' in request data ...
+2026-01-21 15:13:33.137 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-01-21 15:13:33.142 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Connection id "0HNIOOJ183AC5", Request id "0HNIOOJ183AC5:00000006": started reading request body.
+2026-01-21 15:13:33.143 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Connection id "0HNIOOJ183AC5", Request id "0HNIOOJ183AC5:00000006": done reading request body.
+2026-01-21 15:13:33.144 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  JSON input formatter succeeded, deserializing to type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'
+2026-01-21 15:13:33.145 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:13:33.147 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:13:33.149 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:13:33.151 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Done attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:14:27.381 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 INF  CQRS Handling SignInCommand | Payload: {"Username":"string","Password":"string","$type":"SignInCommand"}
+2026-01-21 15:14:27.386 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Entity Framework Core 9.0.1 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.1' with options: MigrationsAssembly=Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null EngineType=SqlServer 
+2026-01-21 15:14:27.388 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Creating DbConnection.
+2026-01-21 15:14:27.389 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Created DbConnection. (1ms).
+2026-01-21 15:14:27.390 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Opening connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:14:27.392 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Opened connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:14:27.393 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Creating DbCommand for 'ExecuteReader'.
+2026-01-21 15:14:27.394 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Created DbCommand for 'ExecuteReader' (0ms).
+2026-01-21 15:14:27.398 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Initialized DbCommand for 'ExecuteReader' (4ms).
+2026-01-21 15:14:27.399 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:14:27.424 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 INF  Executed DbCommand (24ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:14:27.431 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Closing data reader to 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:14:27.433 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  A data reader for 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' is being disposed after spending 1ms reading results.
+2026-01-21 15:14:27.434 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Closing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:14:27.435 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 DBG  Closed connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' (1ms).
+2026-01-21 15:14:49.497 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 ERR  CQRS Error in SignInCommand after 18158ms
+Application.Exceptions.UnauthorizedException: Invalid credentials
+   at Application.CQRS.Commands.Auth.SignIn.SignInHandler.Handle(SignInCommand request, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\CQRS\Commands\Auth\SignIn\SignInHandler.cs:line 34
+   at Application.Behavior.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\Behavior\LoggingBehavior.cs:line 34
+2026-01-21 15:14:50.053 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 INF  Executed action API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee) in 76922.4329ms
+2026-01-21 15:14:50.055 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 INF  Executed endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:14:50.105 +07:00 5ee45de4-0b59-4047-87b2-10a718ee7143 WRN  Handled exception at /api/v1/Auth/sign-in StatusCode 401 Message Invalid credentials
+2026-01-21 15:14:50.108 +07:00  DBG  Connection id "0HNIOOJ183AC5" completed keep alive response.
+2026-01-21 15:14:50.114 +07:00  DBG  'DatabaseContext' disposed.
+2026-01-21 15:14:50.119 +07:00  DBG  Disposing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:14:50.120 +07:00  DBG  Disposed connection to database '' on server '' (1ms).
+2026-01-21 15:14:50.121 +07:00  INF  Request finished HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - 401 null application/json 77022.483ms
+2026-01-21 15:20:41.483 +07:00  DBG  Registered model binder providers, in the following order: ["Asp.Versioning.ApiVersionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-01-21 15:20:41.733 +07:00  DBG  An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-01-21 15:20:41.814 +07:00  INF  User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-21 15:20:42.186 +07:00  DBG  The index {'EmployeeId'} was not created on entity type 'EmployeeAttendance' as the properties are already covered by the index {'EmployeeId', 'WorkDate'}.
+2026-01-21 15:20:42.188 +07:00  DBG  The index {'UserId'} was not created on entity type 'AppUserRole' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-01-21 15:20:42.189 +07:00  DBG  The index {'UserId'} was not created on entity type 'IdentityUserToken<Guid>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-01-21 15:20:46.931 +07:00  DBG  Registered model binder providers, in the following order: ["Asp.Versioning.ApiVersionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-01-21 15:20:47.156 +07:00  DBG  An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-01-21 15:20:47.230 +07:00  INF  User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-21 15:20:47.617 +07:00  DBG  The index {'EmployeeId'} was not created on entity type 'EmployeeAttendance' as the properties are already covered by the index {'EmployeeId', 'WorkDate'}.
+2026-01-21 15:20:47.619 +07:00  DBG  The index {'UserId'} was not created on entity type 'AppUserRole' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-01-21 15:20:47.621 +07:00  DBG  The index {'UserId'} was not created on entity type 'IdentityUserToken<Guid>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-01-21 15:20:47.827 +07:00  DBG  Entity Framework Core 9.0.1 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.1' with options: MigrationsAssembly=Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null EngineType=SqlServer 
+2026-01-21 15:20:47.872 +07:00  DBG  Compiling query expression: 
+'DbSet<AppRole>()
+    .Any()'
+2026-01-21 15:20:48.042 +07:00  DBG  Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<bool>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetRoles AS a)) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetRoles AS a), 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        bool? value1;
+        value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+        return (bool)value1;
+    }, 
+    contextType: Infrastructure.Persistence.DatabaseContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)
+    .Single()'
+2026-01-21 15:20:48.071 +07:00  DBG  Creating DbConnection.
+2026-01-21 15:20:48.086 +07:00  DBG  Created DbConnection. (13ms).
+2026-01-21 15:20:48.091 +07:00  DBG  Opening connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:20:48.304 +07:00  DBG  Opened connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:20:48.308 +07:00  DBG  Creating DbCommand for 'ExecuteReader'.
+2026-01-21 15:20:48.315 +07:00  DBG  Created DbCommand for 'ExecuteReader' (4ms).
+2026-01-21 15:20:48.318 +07:00  DBG  Initialized DbCommand for 'ExecuteReader' (9ms).
+2026-01-21 15:20:48.323 +07:00  DBG  Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-01-21 15:20:48.351 +07:00  INF  Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-01-21 15:20:48.362 +07:00  DBG  Closing data reader to 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:20:48.369 +07:00  DBG  A data reader for 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' is being disposed after spending 11ms reading results.
+2026-01-21 15:20:48.372 +07:00  DBG  Closing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:20:48.377 +07:00  DBG  Closed connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' (5ms).
+2026-01-21 15:20:48.380 +07:00  DBG  'DatabaseContext' disposed.
+2026-01-21 15:20:48.382 +07:00  DBG  Disposing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:20:48.385 +07:00  DBG  Disposed connection to database '' on server '' (2ms).
+2026-01-21 15:20:48.389 +07:00  DBG  Hosting starting
+2026-01-21 15:20:48.396 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-3a3f5ba7-96ca-43ee-aa50-0baf947a8e30.xml'.
+2026-01-21 15:20:48.401 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-8600f587-dc07-4d5b-bb2d-6f3e09633935.xml'.
+2026-01-21 15:20:48.403 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-8ded6968-7296-406f-847b-09157786742c.xml'.
+2026-01-21 15:20:48.404 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-bcbbd09c-5d11-4ea7-a210-5a7b4541efa2.xml'.
+2026-01-21 15:20:48.405 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-bf802ebd-f5d7-4dd0-a35d-d8f5ffbc0bc1.xml'.
+2026-01-21 15:20:48.406 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-e60ff1e8-9769-4c99-9c41-530a7dbb1337.xml'.
+2026-01-21 15:20:48.407 +07:00  DBG  Reading data from file 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys\key-f5e67d02-4c24-4201-b8e7-897e61f0ba09.xml'.
+2026-01-21 15:20:48.412 +07:00  DBG  Found key {3a3f5ba7-96ca-43ee-aa50-0baf947a8e30}.
+2026-01-21 15:20:48.416 +07:00  DBG  Found key {8600f587-dc07-4d5b-bb2d-6f3e09633935}.
+2026-01-21 15:20:48.418 +07:00  DBG  Found key {8ded6968-7296-406f-847b-09157786742c}.
+2026-01-21 15:20:48.419 +07:00  DBG  Found key {bcbbd09c-5d11-4ea7-a210-5a7b4541efa2}.
+2026-01-21 15:20:48.420 +07:00  DBG  Found key {bf802ebd-f5d7-4dd0-a35d-d8f5ffbc0bc1}.
+2026-01-21 15:20:48.420 +07:00  DBG  Found key {e60ff1e8-9769-4c99-9c41-530a7dbb1337}.
+2026-01-21 15:20:48.421 +07:00  DBG  Found key {f5e67d02-4c24-4201-b8e7-897e61f0ba09}.
+2026-01-21 15:20:48.427 +07:00  DBG  Considering key {8ded6968-7296-406f-847b-09157786742c} with expiration date 2026-04-16 02:40:32Z as default key.
+2026-01-21 15:20:48.432 +07:00  DBG  Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-01-21 15:20:48.434 +07:00  DBG  Decrypting secret element using Windows DPAPI.
+2026-01-21 15:20:48.437 +07:00  DBG  Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-01-21 15:20:48.439 +07:00  DBG  Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-01-21 15:20:48.443 +07:00  DBG  Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-01-21 15:20:48.446 +07:00  DBG  Using key {8ded6968-7296-406f-847b-09157786742c} as the default key.
+2026-01-21 15:20:48.448 +07:00  DBG  Key ring with default key {8ded6968-7296-406f-847b-09157786742c} was loaded during application startup.
+2026-01-21 15:20:48.454 +07:00  DBG  Middleware loaded
+2026-01-21 15:20:48.456 +07:00  DBG  Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16509 B).
+2026-01-21 15:20:48.458 +07:00  DBG  Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-01-21 15:20:48.492 +07:00  WRN  The WebRootPath was not found: D:\C# .Net Core\Project\Employee\API-Employee\API-Employee\wwwroot. Static files may be unavailable.
+2026-01-21 15:20:48.519 +07:00  DBG  Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-01-21 15:20:48.557 +07:00  INF  Now listening on: http://[::]:5501
+2026-01-21 15:20:48.558 +07:00  DBG  Loaded hosting startup assembly API-Employee
+2026-01-21 15:20:48.559 +07:00  DBG  Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-01-21 15:20:48.560 +07:00  DBG  Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-01-21 15:20:48.561 +07:00  DBG  Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-01-21 15:20:48.682 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2026-01-21 15:20:48.683 +07:00  INF  Hosting environment: Development
+2026-01-21 15:20:48.684 +07:00  INF  Content root path: D:\C# .Net Core\Project\Employee\API-Employee\API-Employee
+2026-01-21 15:20:48.685 +07:00  DBG  Hosting started
+2026-01-21 15:20:48.833 +07:00  DBG  Connection id "0HNIOONTRM6L3" received FIN.
+2026-01-21 15:20:48.840 +07:00  DBG  Connection id "0HNIOONTRM6L3" accepted.
+2026-01-21 15:20:48.843 +07:00  DBG  Connection id "0HNIOONTRM6L3" started.
+2026-01-21 15:20:48.850 +07:00  DBG  Connection id "0HNIOONTRM6L3" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-01-21 15:20:48.854 +07:00  DBG  Connection id "0HNIOONTRM6L3" disconnecting.
+2026-01-21 15:20:48.858 +07:00  DBG  Connection id "0HNIOONTRM6L3" stopped.
+2026-01-21 15:20:49.029 +07:00  DBG  Connection id "0HNIOONTRM6L4" accepted.
+2026-01-21 15:20:49.031 +07:00  DBG  Connection id "0HNIOONTRM6L4" started.
+2026-01-21 15:20:49.041 +07:00  DBG  Connection id "0HNIOONTRM6L5" accepted.
+2026-01-21 15:20:49.042 +07:00  DBG  Connection id "0HNIOONTRM6L5" started.
+2026-01-21 15:20:49.075 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/swagger/index.html - null null
+2026-01-21 15:20:49.163 +07:00  DBG  Wildcard detected, all requests with hosts will be allowed.
+2026-01-21 15:20:49.198 +07:00 36223b46-340f-4913-b428-c48a19e638f7 DBG  No candidates found for the request path '/swagger/index.html'
+2026-01-21 15:20:49.202 +07:00 36223b46-340f-4913-b428-c48a19e638f7 DBG  Request did not match any endpoints
+2026-01-21 15:20:49.205 +07:00 36223b46-340f-4913-b428-c48a19e638f7 WRN  Failed to determine the https port for redirect.
+2026-01-21 15:20:49.261 +07:00 36223b46-340f-4913-b428-c48a19e638f7 DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:20:49.269 +07:00 36223b46-340f-4913-b428-c48a19e638f7 DBG  The request path /swagger/index.html does not match an existing file
+2026-01-21 15:20:49.320 +07:00 36223b46-340f-4913-b428-c48a19e638f7 DBG  Response markup is scheduled to include Browser Link script injection.
+2026-01-21 15:20:49.322 +07:00 36223b46-340f-4913-b428-c48a19e638f7 DBG  Response markup is scheduled to include browser refresh script injection.
+2026-01-21 15:20:49.334 +07:00  DBG  Response markup was updated to include Browser Link script injection.
+2026-01-21 15:20:49.336 +07:00  DBG  Response markup was updated to include browser refresh script injection.
+2026-01-21 15:20:49.339 +07:00  DBG  Connection id "0HNIOONTRM6L4" completed keep alive response.
+2026-01-21 15:20:49.340 +07:00  DBG  Connection id "0HNIOONTRM6L6" accepted.
+2026-01-21 15:20:49.343 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-21 15:20:49.349 +07:00  DBG  Connection id "0HNIOONTRM6L6" started.
+2026-01-21 15:20:49.351 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/swagger/index.html - 200 null text/html;charset=utf-8 283.7439ms
+2026-01-21 15:20:49.354 +07:00  DBG  Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-01-21 15:20:49.357 +07:00  DBG  Connection id "0HNIOONTRM6L5" completed keep alive response.
+2026-01-21 15:20:49.357 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/_vs/browserLink - null null
+2026-01-21 15:20:49.358 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 17.4369ms
+2026-01-21 15:20:49.388 +07:00  DBG  Connection id "0HNIOONTRM6L4" completed keep alive response.
+2026-01-21 15:20:49.390 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.5882ms
+2026-01-21 15:20:49.441 +07:00  INF  Request starting HTTP/1.1 GET http://localhost:5501/swagger/v1/swagger.json - null null
+2026-01-21 15:20:49.444 +07:00 37a343b0-71c1-4716-9d58-fb70de84f1d9 DBG  No candidates found for the request path '/swagger/v1/swagger.json'
+2026-01-21 15:20:49.445 +07:00 37a343b0-71c1-4716-9d58-fb70de84f1d9 DBG  Request did not match any endpoints
+2026-01-21 15:20:49.449 +07:00 37a343b0-71c1-4716-9d58-fb70de84f1d9 DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:20:49.450 +07:00 37a343b0-71c1-4716-9d58-fb70de84f1d9 DBG  The request path /swagger/v1/swagger.json does not match an existing file
+2026-01-21 15:20:49.502 +07:00  DBG  Connection id "0HNIOONTRM6L4" completed keep alive response.
+2026-01-21 15:20:49.505 +07:00  INF  Request finished HTTP/1.1 GET http://localhost:5501/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 63.3568ms
+2026-01-21 15:20:54.737 +07:00  INF  Request starting HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - application/json 50
+2026-01-21 15:20:54.750 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  1 candidate(s) found for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:20:54.752 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)' with route pattern 'api/v{v:apiVersion}/Auth/sign-in' is valid for the request path '/api/v1/Auth/sign-in'
+2026-01-21 15:20:54.758 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Request matched endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:20:54.761 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  The request has an origin header: 'http://localhost:5501'.
+2026-01-21 15:20:54.762 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 INF  CORS policy execution successful.
+2026-01-21 15:20:54.766 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  AuthenticationScheme: Bearer was not authenticated.
+2026-01-21 15:20:54.767 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:20:54.769 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Static files was skipped as the request already matched an endpoint.
+2026-01-21 15:20:54.771 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 INF  Executing endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:20:54.792 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 INF  Route matched with {action = "SignIn", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignIn(Application.CQRS.Commands.Auth.SignIn.SignInCommand) on controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee).
+2026-01-21 15:20:54.796 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Execution plan of authorization filters (in the following order): ["None"]
+2026-01-21 15:20:54.798 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Execution plan of resource filters (in the following order): ["None"]
+2026-01-21 15:20:54.799 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:20:54.802 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Execution plan of exception filters (in the following order): ["None"]
+2026-01-21 15:20:54.803 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2026-01-21 15:20:54.807 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Executing controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:20:54.811 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 WRN  You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-01-21 15:20:54.813 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Executed controller factory for controller API_Employee.Controllers.V1.Auth.AuthController (API-Employee)
+2026-01-21 15:20:54.818 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:20:54.821 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' using the name '' in request data ...
+2026-01-21 15:20:54.824 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-01-21 15:20:54.834 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Connection id "0HNIOONTRM6L4", Request id "0HNIOONTRM6L4:00000004": started reading request body.
+2026-01-21 15:20:54.836 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Connection id "0HNIOONTRM6L4", Request id "0HNIOONTRM6L4:00000004": done reading request body.
+2026-01-21 15:20:54.848 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  JSON input formatter succeeded, deserializing to type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'
+2026-01-21 15:20:54.850 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:20:54.851 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Done attempting to bind parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:20:54.853 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand' ...
+2026-01-21 15:20:54.857 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Done attempting to validate the bound parameter 'command' of type 'Application.CQRS.Commands.Auth.SignIn.SignInCommand'.
+2026-01-21 15:20:58.495 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 INF  CQRS Handling SignInCommand | Payload: {"Username":"string","Password":"string","$type":"SignInCommand"}
+2026-01-21 15:20:58.550 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Entity Framework Core 9.0.1 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.1' with options: MigrationsAssembly=Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null EngineType=SqlServer 
+2026-01-21 15:20:58.563 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Compiling query expression: 
+'DbSet<AppUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2026-01-21 15:20:58.618 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AppUser>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<AppUser>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 2], [Property: AppUser.CreatedAt (DateTime?), 3], [Property: AppUser.DateBirth (DateTime?), 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string), 7], [Property: AppUser.LastName (string), 8], [Property: AppUser.LockoutEnabled (bool) Required, 9], [Property: AppUser.LockoutEnd (DateTimeOffset?), 10], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: AppUser.PasswordHash (string), 13], [Property: AppUser.PhoneNumber (string), 14], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 15], [Property: AppUser.SecurityStamp (string), 16], [Property: AppUser.TwoFactorEnabled (bool) Required, 17], [Property: AppUser.UpdatedAt (DateTime?), 18], [Property: AppUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DateBirth, a.Email, a.EmailConfirmed, a.FirstName, a.LastName, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: AppUser.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: AppUser.AccessFailedCount (int) Required, 1], [Property: AppUser.ConcurrencyStamp (string) Concurrency, 2], [Property: AppUser.CreatedAt (DateTime?), 3], [Property: AppUser.DateBirth (DateTime?), 4], [Property: AppUser.Email (string) MaxLength(256), 5], [Property: AppUser.EmailConfirmed (bool) Required, 6], [Property: AppUser.FirstName (string), 7], [Property: AppUser.LastName (string), 8], [Property: AppUser.LockoutEnabled (bool) Required, 9], [Property: AppUser.LockoutEnd (DateTimeOffset?), 10], [Property: AppUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: AppUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: AppUser.PasswordHash (string), 13], [Property: AppUser.PhoneNumber (string), 14], [Property: AppUser.PhoneNumberConfirmed (bool) Required, 15], [Property: AppUser.SecurityStamp (string), 16], [Property: AppUser.TwoFactorEnabled (bool) Required, 17], [Property: AppUser.UpdatedAt (DateTime?), 18], [Property: AppUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DateBirth, a.Email, a.EmailConfirmed, a.FirstName, a.LastName, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            AppUser entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                AppUser instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(AppUser);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: AppUser.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("Domain.Identity.AppUser").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetGuid(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (AppUser)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Domain.Identity.AppUser")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Domain.Identity.AppUser")]: 
+                            {
+                                return 
+                                {
+                                    AppUser instance;
+                                    instance = new AppUser();
+                                    instance.<Id>k__BackingField = dataReader.GetGuid(0);
+                                    instance.<AccessFailedCount>k__BackingField = dataReader.GetInt32(1);
+                                    instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(2) ? default(string) : dataReader.GetString(2);
+                                    instance.<CreatedAt>k__BackingField = dataReader.IsDBNull(3) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(3);
+                                    instance.<DateBirth>k__BackingField = dataReader.IsDBNull(4) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(4);
+                                    instance.<Email>k__BackingField = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+                                    instance.<EmailConfirmed>k__BackingField = dataReader.GetBoolean(6);
+                                    instance.<FirstName>k__BackingField = dataReader.IsDBNull(7) ? default(string) : dataReader.GetString(7);
+                                    instance.<LastName>k__BackingField = dataReader.IsDBNull(8) ? default(string) : dataReader.GetString(8);
+                                    instance.<LockoutEnabled>k__BackingField = dataReader.GetBoolean(9);
+                                    instance.<LockoutEnd>k__BackingField = dataReader.IsDBNull(10) ? default(DateTimeOffset?) : (DateTimeOffset?)dataReader.GetFieldValue<DateTimeOffset>(10);
+                                    instance.<NormalizedEmail>k__BackingField = dataReader.IsDBNull(11) ? default(string) : dataReader.GetString(11);
+                                    instance.<NormalizedUserName>k__BackingField = dataReader.IsDBNull(12) ? default(string) : dataReader.GetString(12);
+                                    instance.<PasswordHash>k__BackingField = dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13);
+                                    instance.<PhoneNumber>k__BackingField = dataReader.IsDBNull(14) ? default(string) : dataReader.GetString(14);
+                                    instance.<PhoneNumberConfirmed>k__BackingField = dataReader.GetBoolean(15);
+                                    instance.<SecurityStamp>k__BackingField = dataReader.IsDBNull(16) ? default(string) : dataReader.GetString(16);
+                                    instance.<TwoFactorEnabled>k__BackingField = dataReader.GetBoolean(17);
+                                    instance.<UpdatedAt>k__BackingField = dataReader.IsDBNull(18) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(18);
+                                    instance.<UserName>k__BackingField = dataReader.IsDBNull(19) ? default(string) : dataReader.GetString(19);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: AppUser | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Domain.Identity.AppUser")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(AppUser)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: Infrastructure.Persistence.DatabaseContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-01-21 15:20:58.653 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Creating DbConnection.
+2026-01-21 15:20:58.654 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Created DbConnection. (1ms).
+2026-01-21 15:20:58.658 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Opening connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:20:58.661 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Opened connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:20:58.663 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Creating DbCommand for 'ExecuteReader'.
+2026-01-21 15:20:58.664 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Created DbCommand for 'ExecuteReader' (1ms).
+2026-01-21 15:20:58.668 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Initialized DbCommand for 'ExecuteReader' (5ms).
+2026-01-21 15:20:58.671 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:20:58.719 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 INF  Executed DbCommand (50ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-01-21 15:20:58.729 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Closing data reader to 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:20:58.731 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  A data reader for 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' is being disposed after spending 8ms reading results.
+2026-01-21 15:20:58.734 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Closing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:20:58.735 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 DBG  Closed connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS' (1ms).
+2026-01-21 15:20:58.738 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 INF  Test error log in SignInHandler
+2026-01-21 15:21:01.100 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 ERR  CQRS Error in SignInCommand after 2605ms
+Application.Exceptions.UnauthorizedException: Invalid credentials
+   at Application.CQRS.Commands.Auth.SignIn.SignInHandler.Handle(SignInCommand request, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\CQRS\Commands\Auth\SignIn\SignInHandler.cs:line 37
+   at Application.Behavior.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\C# .Net Core\Project\Employee\API-Employee\Application\Behavior\LoggingBehavior.cs:line 34
+2026-01-21 15:21:01.197 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 INF  Executed action API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee) in 6389.6946ms
+2026-01-21 15:21:01.200 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 INF  Executed endpoint 'API_Employee.Controllers.V1.Auth.AuthController.SignIn (API-Employee)'
+2026-01-21 15:21:01.270 +07:00 db132262-7ee1-49ce-b871-4815f44b5eb8 WRN  Handled exception at /api/v1/Auth/sign-in StatusCode 401 Message Invalid credentials
+2026-01-21 15:21:01.276 +07:00  DBG  Connection id "0HNIOONTRM6L4" completed keep alive response.
+2026-01-21 15:21:01.278 +07:00  DBG  'DatabaseContext' disposed.
+2026-01-21 15:21:01.282 +07:00  DBG  Disposing connection to database 'EmplApi' on server 'DESKTOP-D1TJ1DB\SQLEXPRESS'.
+2026-01-21 15:21:01.283 +07:00  DBG  Disposed connection to database '' on server '' (1ms).
+2026-01-21 15:21:01.285 +07:00  INF  Request finished HTTP/1.1 POST http://localhost:5501/api/v1/Auth/sign-in - 401 null application/json 6548.7182ms
